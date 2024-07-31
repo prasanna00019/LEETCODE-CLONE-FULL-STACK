@@ -16,7 +16,7 @@ const [def,setdef]=useState('javascript');
    }
    const fetchData1 = async (probId,language) => {
     try {
-      const res = await fetch(`/api/problems/${probId}`, {
+      const res = await fetch(`https://coding-engine-trial.onrender.com/api/problems/${probId}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
