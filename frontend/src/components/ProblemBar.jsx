@@ -1,11 +1,11 @@
-
 import React, { useContext, useEffect, useState } from 'react';
 import { CodeExecutionContext } from '../Context';
-
+import { useAuthContext } from '../context/AuthContext';
 const ProblemBar = () => {
   const { isProblemBar, setisProblemBar, data, setData ,probId,setprobId} = useContext(CodeExecutionContext);
   const [loading, setLoading] = useState(true);
-
+  const [solvedStatus, setSolvedStatus] = useState({});
+const {Authuser}=useAuthContext()
   const fetchData = async () => {
     try {
       const res = await fetch('https://coding-engine-trial.onrender.com/api/problems/', {
@@ -17,13 +17,45 @@ const ProblemBar = () => {
       const result = await res.json();
       console.log('Fetched Data problem data:', result); // Debugging log
       setData(result); // Set the fetched data in state
+      const statusPromises = result.map(async problem => {
+        const isSolved = await fetchData_solved(problem._id);
+        return { id: problem._id, isSolved };
+    });
+
+    const statusResults = await Promise.all(statusPromises);
+    const statusMap = statusResults.reduce((acc, { id, isSolved }) => {
+        acc[id] = isSolved;
+        return acc;
+    }, {});
+
+    setSolvedStatus(statusMap);
       setLoading(false); // Set loading to false once data is fetched
     } catch (error) {
       console.error('Error fetching data:', error);
       setLoading(false); // Also stop loading if there's an error
     }
   };
- 
+  const fetchData_solved= async (prob) => {
+    try {
+        const res = await fetch(`https://coding-engine-trial.onrender.com/api/submit/${Authuser._id}/${prob}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+        const result = await res.json();
+        // console.log(result)
+        const hasSuccess=result.some(item=>item.result.status==="success");
+        // console.log(hasSuccess);
+        return hasSuccess;
+        // setSubmissionUser(result);
+        setLoading(false);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        // setLoading(false);
+        return false;
+    }
+};
   useEffect(() => {
     fetchData();
   }, []);
@@ -47,6 +79,7 @@ const ProblemBar = () => {
           <div key={index} className='problem-row cursor-pointer border border-black bg-orange-300'
           onClick={()=>setprobId(problem._id)} >
             {problem.problem_name}
+            {solvedStatus[problem._id] && <span className='text-green-600 ml-10'>SOLVED</span> }
           </div>
         ))
       )}
