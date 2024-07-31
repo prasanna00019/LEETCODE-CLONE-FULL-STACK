@@ -8,7 +8,7 @@ export default defineConfig({
     port:3000,
     proxy:{
       '/api':{
-        target:"https://coding-engine-trial.onrender.com",
+        target:"http://localhost:4000",
         changeOrigin:true,
         secure:false,
       }
