@@ -24,7 +24,7 @@ const UseLogin=()=>{
         if(!success) return;
         setloading(true);
         try {
-            const res=await fetch('/api/auth/login',{
+            const res=await fetch('https://coding-engine-trial.onrender.com/api/auth/login',{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({username,password}),
