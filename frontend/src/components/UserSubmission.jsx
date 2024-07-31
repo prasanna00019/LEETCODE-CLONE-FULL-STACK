@@ -12,7 +12,7 @@ const UserSubmission = () => {
 
     const fetchData = async () => {
         try {
-            const res = await fetch(`https://coding-engine-trial.onrender.com/api/problems/api/submit/${Authuser._id}/${probId}`, {
+            const res = await fetch(`https://coding-engine-trial.onrender.com/api/submit/${Authuser._id}/${probId}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
