@@ -35,7 +35,7 @@ export const useTestCaseRunner = () => {
   let c;
   const submitCode=async(userId,problemId,code,language,result,submissionTime)=>{
     try {
-      const res=await fetch('/api/submit',{
+      const res=await fetch('https://coding-engine-trial.onrender.com/api/submit',{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify({userId,problemId,code,language,result,submissionTime})
