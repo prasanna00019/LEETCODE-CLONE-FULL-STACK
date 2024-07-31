@@ -33,6 +33,7 @@ app.use(cors()); // Allow cross-origin requests
 app.use("/api/auth", authRoutes);
 app.use("/api/problems", problemRoute);
 app.use("/api/submit", userSubmissionRoute);
+if(process.env.NODE_ENV==="production"){
 
 // Serve static files from the frontend
 app.use(express.static(path.join(__dirname, "frontend/dist")));
@@ -41,7 +42,7 @@ app.use(express.static(path.join(__dirname, "frontend/dist")));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
 });
-
+}
 // Start the server
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
