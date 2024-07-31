@@ -114,8 +114,8 @@ const Navbar = () => {
             </div>
             <div className='flex gap-1 justify-end items-center text-xl mt-1 '>
                 <button className='bg-blue-500   border p-1 rounded-lg text-xl ml-10 text-white' onClick={handleUsernameClick} >
-                    {Authuser ? Authuser.username : SIGN - UP}</button>
-                <img src={Authuser ? Authuser.profilePic : ""} width={40} height={30} alt="" />
+{/*                     {Authuser ? Authuser.username : SIGN - UP}</button> */}
+{/*                 <img src={Authuser ? Authuser.profilePic : ""} width={40} height={30} alt="" /> */}
                 <button className='bg-orange-200 border p-1 rounded-lg text-xl ml-10 text-orange-500' onClick={logout}>LOGOUT</button>
             </div>
         </nav>
