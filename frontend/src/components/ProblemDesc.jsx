@@ -9,7 +9,7 @@ const ProblemDesc = () => {
   const {data,setData,setprobId,probId,setCurrentProblem,currentProblem}=useContext(CodeExecutionContext);
   const fetchData = async () => {
     try {
-      const res = await fetch('/api/problems/', {
+      const res = await fetch('https://coding-engine-trial.onrender.com/api/problems/', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
