@@ -1,27 +1,48 @@
-import express from "express"
-import cors from "cors"
-// import 'dotenv/config' 
-import dotenv from "dotenv"
-dotenv.config();
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
-import authRoutes from "./src/routes/AuthRoutes.js";
-import problemRoute from './src/routes/ProblemRoutes.js'
-import userSubmissionRoute from './src/routes/UserSubmissionRoute.js'
-import connectDB from "./src/DB/connectDB.js";
-const __filename=fileURLToPath(import.meta.url);
-const __dirname=path.dirname(__filename);
-const app=express();
-const port =process.env.PORT|| 4000;
-connectDB();
-//middlewares
-app.use(express.json());
-app.use(cors())     //connect frontend to backend
-app.use('/api/auth',authRoutes);
-app.use('/api/problems',problemRoute);
-app.use('/api/submit',userSubmissionRoute);
-//initialising routes
+import cookieParser from "cookie-parser";
 
-app.listen(port,()=>{
-    console.log(`server started on ${port}`);
-})
+import authRoutes from "./src/routes/AuthRoutes.js";
+import problemRoute from "./src/routes/ProblemRoutes.js";
+import userSubmissionRoute from "./src/routes/UserSubmissionRoute.js";
+import connectDB from "./src/DB/connectDB.js";
+
+// Load environment variables
+dotenv.config();
+
+// Resolve directory paths
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename).replace("\\backend", "");
+
+// Initialize express app
+const app = express();
+const port = process.env.PORT || 4000;
+
+// Connect to the database
+connectDB();
+
+// Middlewares
+app.use(express.json());
+app.use(cookieParser());
+app.use(cors()); // Allow cross-origin requests
+
+// API routes
+app.use("/api/auth", authRoutes);
+app.use("/api/problems", problemRoute);
+app.use("/api/submit", userSubmissionRoute);
+
+// Serve static files from the frontend
+app.use(express.static(path.join(__dirname, "frontend/dist")));
+
+// Handle client-side routing for SPA
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
+});
