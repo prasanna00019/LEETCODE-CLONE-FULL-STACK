@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
-// import cookieParser from "cookie-parser";
+import cookieParser from "cookie-parser";
 
 import authRoutes from "./src/routes/AuthRoutes.js";
 import problemRoute from "./src/routes/ProblemRoutes.js";
@@ -26,7 +26,7 @@ connectDB();
 
 // Middlewares
 app.use(express.json());
-// app.use(cookieParser());
+app.use(cookieParser());
 app.use(cors()); // Allow cross-origin requests
 
 // API routes
