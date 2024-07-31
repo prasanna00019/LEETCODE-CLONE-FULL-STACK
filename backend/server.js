@@ -22,7 +22,6 @@ app.use('/api/problems',problemRoute);
 app.use('/api/submit',userSubmissionRoute);
 //initialising routes
 app.get('/',(req,res)=>{
-    res.send("api working bro")
 })
 app.listen(port,()=>{
     console.log(`server started on ${port}`);
