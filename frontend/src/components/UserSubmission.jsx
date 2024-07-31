@@ -55,8 +55,9 @@ const UserSubmission = () => {
                     ) : (
                         submissionUser.map((submission,index) => (
                             <div key={submission._id} className='flex flex-col gap-2 mt-10'>
-                                <div className='flex gap-2 bg-yellow-400 p-3 hover:bg-yellow-300
-                                rounded-xl text-xl font-bold'>
+                                 <div
+  className={`flex gap-2 p-3 hover:bg-blue-200   rounded-xl text-xl font-bold ${submission.result.status === "success" ? "bg-green-300" : "bg-red-400"}`}
+>
                                     <span>{index+1})</span>
                                     <span>{submission.result.status}</span>
                                     <span>{new Date(submission.submissionTime).toLocaleString()}</span>
