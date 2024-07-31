@@ -14,9 +14,9 @@ import connectDB from "./src/DB/connectDB.js";
 dotenv.config();
 
 // Resolve directory paths
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename).replace("\\backend", "");
-
+const __dirname_temp=path.resolve();
+const __dirname = path.join(__dirname_temp, '..');
+console.log(__dirname);
 // Initialize express app
 const app = express();
 const port = process.env.PORT || 4000;
