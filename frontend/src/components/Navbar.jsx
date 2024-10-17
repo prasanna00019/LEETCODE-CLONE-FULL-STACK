@@ -27,7 +27,7 @@ const Navbar = () => {
     const [arr,setarr]=useState([]);
     // const [code,s]
     const { language, setCode, code,setOutput, Output, editorRef,isProblemBar
-      ,setisProblemBar,probId,setprobId} = useContext(CodeExecutionContext);
+      ,setisProblemBar,probId,setprobId,setResArr} = useContext(CodeExecutionContext);
     const fetchData = async () => {
         try {
           const res = await fetch('https://coding-engine-trial.onrender.com/api/problems/', {
@@ -86,6 +86,8 @@ const Navbar = () => {
     const run_helper2=async(code,lang)=>{
         await run_sample_testcases(code,lang,toast);
         console.log(ResArr);
+        // setResArr([])
+
     }
     return (
         <nav className='h-200px border border-gray-400 p-2 bg-[#f0f0f0] flex justify-center relative'>
