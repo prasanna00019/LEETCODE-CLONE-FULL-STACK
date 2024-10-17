@@ -19,6 +19,9 @@ const UserSubmission = () => {
                 },
             });
             const result = await res.json();
+            // console.log(result)
+            const hasSuccess=result.some(item=>item.result.status==="success");
+            console.log(hasSuccess);
             setSubmissionUser(result);
             setLoading(false);
         } catch (error) {
@@ -55,7 +58,7 @@ const UserSubmission = () => {
                     ) : (
                         submissionUser.map((submission,index) => (
                             <div key={submission._id} className='flex flex-col gap-2 mt-10'>
-                                 <div
+                               <div
   className={`flex gap-2 p-3 hover:bg-blue-200   rounded-xl text-xl font-bold ${submission.result.status === "success" ? "bg-green-300" : "bg-red-400"}`}
 >
                                     <span>{index+1})</span>
@@ -64,7 +67,7 @@ const UserSubmission = () => {
                                     <span>{submission.language}</span>
                                     <button 
                                         onClick={() => handleCodeClick(submission.code)} 
-                                        className='ml-2 text-blue-500 underline'
+                                        className='ml-2 text-blue-900 underline'
                                     >
                                         CODE
                                     </button>
@@ -94,4 +97,3 @@ const UserSubmission = () => {
 };
 
 export default UserSubmission;
-
