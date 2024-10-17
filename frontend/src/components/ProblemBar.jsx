@@ -5,7 +5,7 @@ const ProblemBar = () => {
   const { isProblemBar, setisProblemBar, data, setData ,probId,setprobId} = useContext(CodeExecutionContext);
   const [loading, setLoading] = useState(true);
   const [solvedStatus, setSolvedStatus] = useState({});
-    const [solvedCount, setSolvedCount] = useState(0);
+  const [solvedCount, setSolvedCount] = useState(0);
 const {Authuser}=useAuthContext()
   const fetchData = async () => {
     try {
@@ -28,10 +28,11 @@ const {Authuser}=useAuthContext()
         acc[id] = isSolved;
         return acc;
     }, {});
-          const solvedCount = statusResults.filter(({ isSolved }) => isSolved).length;
+    const solvedCount = statusResults.filter(({ isSolved }) => isSolved).length;
 
     setSolvedStatus(statusMap);
-          setSolvedCount(solvedCount);
+    setSolvedCount(solvedCount);
+
       setLoading(false); // Set loading to false once data is fetched
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -50,9 +51,10 @@ const {Authuser}=useAuthContext()
         // console.log(result)
         const hasSuccess=result.some(item=>item.result.status==="success");
         // console.log(hasSuccess);
+        setLoading(false);
         return hasSuccess;
         // setSubmissionUser(result);
-        setLoading(false);
+       
     } catch (error) {
         console.error('Error fetching data:', error);
         // setLoading(false);
@@ -75,7 +77,7 @@ const {Authuser}=useAuthContext()
           X
         </span>
       )} </span>
-       <div className='mt-2 mb-4'>
+        <div className='mt-2 mb-4'>
                 <span>{solvedCount}/{data.length} problems solved</span>
             </div>
       {loading ? (
