@@ -38,3 +38,15 @@ export const getSubmission=async(req,res)=>{
       console.log("error in getting submissions",error.message);   
     }
 }
+export const getAllOfParticularUser=async(req,res)=>{
+    try {
+        const {userId}=req.params;
+        const submissions=await UserSubmission.find({
+            userId:userId
+        }).exec();
+        // console.log(submissions.length);
+        res.status(201).json(submissions)
+    } catch (error) {
+      console.log("error in getting submissions",error.message);   
+    }
+}
