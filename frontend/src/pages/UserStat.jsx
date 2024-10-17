@@ -17,7 +17,7 @@ const UserStat = () => {
   });
   const fetchAllProblemsSolvedCount=async()=>{
    try {
-    const res=await fetch(`/api/submit/${Authuser._id}`,{
+    const res=await fetch(`https://coding-engine-trial.onrender.com/api/submit/${Authuser._id}`,{
       method:'GET',
       headers:{
         'Content-Type':'application/json',
@@ -33,7 +33,7 @@ const UserStat = () => {
   }
   const fetchData = async () => {
     try {
-      const res = await fetch('/api/problems/', {
+      const res = await fetch('https://coding-engine-trial.onrender.com/api/problems/', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ const UserStat = () => {
   };
   const fetchData_solved= async (prob) => {
     try {
-        const res = await fetch(`/api/submit/${Authuser._id}/${prob}`, {
+        const res = await fetch(`https://coding-engine-trial.onrender.com/api/submit/${Authuser._id}/${prob}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
