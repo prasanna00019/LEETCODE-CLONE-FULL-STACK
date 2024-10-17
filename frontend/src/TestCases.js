@@ -1,3 +1,4 @@
+
 export const TestCases_Data = {
   "66a4f95d356f18b4578af8b5":{  //POWER-OF-TWO
       "cpp":{
@@ -241,37 +242,7 @@ export const TestCases_Data = {
       "starter": "",
       "output": "print(min_window(\"${input}\",\"${input2}\"))"
     },
-    "problem": {
-      "id": "66a5df5184fae069fbc8c61b",
-      "name": "Minimum Window Substring",
-      "description": "Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string.",
-      "examples": [
-        {
-          "input": ["ADOBECODEBANC","ABC"],
-          "output": "BANC",
-          "explanation": "The minimum window substring \"BANC\" includes 'A', 'B', and 'C' from string t."
-        },
-        {
-          "input": ["a","a"],
-          "output": "a",
-          "explanation": "The entire string s is the minimum window."
-        },
-        {
-          "input": ["a","aa"],
-          "output": "",
-          "explanation": "Both 'a's from t must be included in the window. Since the largest window of s only has one 'a', return empty string."
-        }
-      ],
-      "constraints": "m == s.length, n == t.length, 1 <= m, n <= 10^5, s and t consist of uppercase and lowercase English letters.",
-      "category": "hard",
-      "tags": ["Sliding Window", "String"],
-      "solution_skeleton": {
-        "javascript": "function minWindow(s, t) {\n  // Your code here\n  return \"\";\n}",
-        "python": "def min_window(s, t):\n    # Your code here\n    return \"\"",
-        "java": "public String minWindow(String s, String t) {\n    // Your code here\n    return \"\";\n}",
-        "c": "char* minWindow(const char* s, const char* t) {\n    // Your code here\n    return \"\";\n}",
-        "cpp": "string minWindow(string s, string t) {\n    // Your code here\n    return \"\";\n}"
-      },
+   
       "hints": [
         "Use two pointers to create a sliding window.",
         "Expand the window until it contains all characters of t.",
@@ -323,7 +294,40 @@ export const TestCases_Data = {
           }
         ]
       }
+    
+  }
+  ,
+  "66acad171f7789f852deb247": { // Minimum Swaps to Group All 1's Together II
+    "cpp": {
+      "starter": "#include<bits/stdc++.h>\nusing namespace std;\n",
+      "output": "int main() {\n    vector<int> nums = \${input}\n    int result = minSwaps(nums);\n    cout << result << endl;\n \n}"
+    },
+    "java": {
+      "starter": "import java.util.*;\npublic class MinimumSwaps {\n",
+      "output": "\npublic static void main(String[] args) {\n    MinimumSwaps ms = new MinimumSwaps();\n    int[] nums = \${input};\n    int result = ms.minSwaps(nums);\n    System.out.println(result);\n}\n}"
+    },
+    "javascript": {
+      "starter": "",
+      "output": "\nconst nums = \${input};\nconst result = minSwaps(nums);\nconsole.log(result);"
+    },
+    "c": {
+      "starter": "#include <stdio.h>\n",
+      "output": "\nint main() {\n    int nums[] = \${input};\n    int numsSize = sizeof(nums) / sizeof(nums[0]);\n    int result = minSwaps(nums, numsSize);\n    printf(\"%d\\n\", result);\n    return 0;\n}"
+    },
+    "python": {
+      "starter": "",
+      "output": "nums = \${input}\nresult = min_swaps(nums)\nprint(result)"
+    },
+    "testcases": {
+      "sample": [
+        { "input": ["[0,1,0,1,1,0,0]"], "output": "1", "_id": { "$oid": "66a4f50d035b5dc2e1cf49f0" } },
+        { "input": ["[0,1,1,1,0,0,1,1,0]"], "output": "2", "_id": { "$oid": "66a4f50d035b5dc2e1cf49f1" } }
+      ],
+      "all_test_cases": [
+        { "input": ["[0,1,0,1,1,0,0]"], "output": "1", "_id": { "$oid": "66a4f50d035b5dc2e1cf49f2" } },
+        { "input": ["[0,1,1,1,0,0,1,1,0]"], "output": "2", "_id": { "$oid": "66a4f50d035b5dc2e1cf49f3" } },
+        { "input": ["[1,1,0,0,1]"], "output": "0", "_id": { "$oid": "66a4f50d035b5dc2e1cf49f4" } }
+      ]
     }
   }
-  
   };
