@@ -101,9 +101,9 @@ useEffect(()=>{
                 {currentProblem ? currentProblem.problem_name : data[0].problem_name}
                 </span>
                 <span
-                  className={`rounded-xl bg-[#f0f0f0] w-[85px] p-1 text-center mt-5 ${getCategoryColor(
+                  className={`rounded-xl bg-[#f0f0f0] w-[85px] p-2 text-center mt-5 ${getCategoryColor(
                     currentProblem.category
-                  )} text-xl w-[100px] ` }
+                  )} text-xl w-[140px] ` }
                 >
                   {currentProblem.category}
                 </span>
