@@ -1,0 +1,511 @@
+[{
+  "_id": {
+    "$oid": "66a4f50d035b5dc2e1cf49db"
+  },
+  "problem_name": "Power of Three",
+  "problem_desc": "Given an integer n, return true if it is a power of three. Otherwise, return false. An integer n is a power of three, if there exists an integer x such that n == 3^x.",
+  "problem_examples": "<b>Example 1:</b><br><br><b>Input:</b> n = 27 <br><b>Output:</b> true <br><b>Explanation:</b> 27 = 3^3<br><br><b>Example 2:</b><br><br><b>Input:</b> n = 0 <br><b>Output:</b> false<br><b>Explanation:</b> There is no x where 3^x = 0.<br>",
+  "constraints": "-231 &lt;= n &lt;= 231 - 1",
+  "category": "easy",
+  "tags": [
+    "Math",
+    "recursion"
+  ],
+  "solution_skeleton": {
+    "javascript": "function isPowerOfThree(n) {\n  // Your code here\n}",
+    "python": "def is_power_of_three(n):\n  # Your code here\n",
+    "java": "public boolean isPowerOfThree(int n) {\n  // Your code here\n}",
+    "c": "int isPowerOfThree(int n) {\n  // Your code here\n}",
+    "cpp": "bool isPowerOfThree(int n) {\n  // Your code here\n}"
+  },
+  "hints": [],
+  "testcases": {
+    "sample": [
+      {
+        "input": "27",
+        "output": "true",
+        "_id": {
+          "$oid": "66a4f50d035b5dc2e1cf49dc"
+        }
+      },
+      {
+        "input": "0",
+        "output": "false",
+        "_id": {
+          "$oid": "66a4f50d035b5dc2e1cf49dd"
+        }
+      }
+    ],
+    "all_test_cases": [
+      {
+        "input": "9",
+        "output": "true",
+        "_id": {
+          "$oid": "66a4f50d035b5dc2e1cf49de"
+        }
+      },
+      {
+        "input": "45",
+        "output": "false",
+        "_id": {
+          "$oid": "66a4f50d035b5dc2e1cf49df"
+        }
+      }
+    ]
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a4f95d356f18b4578af8b5"
+  },
+  "problem_name": "Power of Two",
+  "problem_desc": "Given an integer n, return true if it is a power of two. Otherwise, return false. An integer n is a power of two if there exists an integer x such that n == 2^x.",
+  "problem_examples": "<b>Example 1:</b><br><br><b>Input:</b> n = 1 <br><b>Output:</b> true <br><b>Explanation:</b> 2^0 = 1<br><br><b>Example 2:</b><br><br><b>Input:</b> n = 16 <br><b>Output:</b> true<br><b>Explanation:</b> 2^4 = 16<br>",
+  "constraints": "-2^31 &lt;= n &lt;= 2^31 - 1",
+  "category": "easy",
+  "tags": [
+    "Math",
+    "Bit Manipulation"
+  ],
+  "solution_skeleton": {
+    "javascript": "function isPowerOfTwo(n) {\n  // Your code here\n}",
+    "python": "def is_power_of_two(n):\n    # Your code here",
+    "java": "public boolean isPowerOfTwo(int n) {\n    // Your code here\n}",
+    "c": "int isPowerOfTwo(int n) {\n    // Your code here\n}",
+    "cpp": "bool isPowerOfTwo(int n) {\n    // Your code here\n}"
+  },
+  "hints": [
+    "Try using bit manipulation.",
+    "A power of two always has one bit set in binary representation."
+  ],
+  "testcases": {
+    "sample": [
+      {
+        "input": "1",
+        "output": "true",
+        "_id": {
+          "$oid": "66a4f95d356f18b4578af8b6"
+        }
+      },
+      {
+        "input": "16",
+        "output": "true",
+        "_id": {
+          "$oid": "66a4f95d356f18b4578af8b7"
+        }
+      }
+    ],
+    "all_test_cases": [
+      {
+        "input": "1",
+        "output": "true",
+        "_id": {
+          "$oid": "66a4f95d356f18b4578af8b8"
+        }
+      },
+      {
+        "input": "16",
+        "output": "true",
+        "_id": {
+          "$oid": "66a4f95d356f18b4578af8b9"
+        }
+      },
+      {
+        "input": "3",
+        "output": "false",
+        "_id": {
+          "$oid": "66a4f95d356f18b4578af8ba"
+        }
+      },
+      {
+        "input": "1024",
+        "output": "true",
+        "_id": {
+          "$oid": "66a4f95d356f18b4578af8bb"
+        }
+      }
+    ]
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a5dd3e84fae069fbc8c5ff"
+  },
+  "problem_name": "Edit Distance",
+  "problem_desc": "Given two strings word1 and word2, return the minimum number of operations required to convert word1 to word2. You have the following three operations permitted on a word: Insert a character, Delete a character, Replace a character.",
+  "problem_examples": "<b>Example 1:</b><br><br><b>Input:</b> word1 = 'horse', word2 = 'ros' <br><b>Output:</b> 3 <br><b>Explanation:</b> horse -> rorse (replace 'h' with 'r'), rorse -> rose (remove 'r'), rose -> ros (remove 'e')<br><br><b>Example 2:</b><br><br><b>Input:</b> word1 = 'intention', word2 = 'execution' <br><b>Output:</b> 5 <br><b>Explanation:</b> intention -> inention (remove 't'), inention -> enention (replace 'i' with 'e'), enention -> exention (replace 'n' with 'x'), exention -> exection (replace 'n' with 'c'), exection -> execution (insert 'u')",
+  "constraints": "0 <= word1.length, word2.length <= 500; word1 and word2 consist of lowercase English letters.",
+  "category": "medium",
+  "tags": [
+    "Dynamic Programming",
+    "String Manipulation"
+  ],
+  "solution_skeleton": {
+    "javascript": "function minDistance(word1, word2) {\n  // Your code here\n  return 0;\n}",
+    "python": "def min_distance(word1, word2):\n    # Your code here\n    return 0",
+    "java": "public int minDistance(String word1, String word2) {\n    // Your code here\n    return 0;\n}",
+    "c": "int minDistance(char* word1, char* word2) {\n    // Your code here\n    return 0;\n}",
+    "cpp": "int minDistance(string word1, string word2) {\n    // Your code here\n    return 0;\n}"
+  },
+  "hints": [
+    "Use dynamic programming to keep track of the minimum operations required.",
+    "Consider the cost of each operation: insert, delete, and replace."
+  ],
+  "testcases": {
+    "sample": [
+      {
+        "input": "{\"word1\": \"horse\", \"word2\": \"ros\"}",
+        "output": "3",
+        "_id": {
+          "$oid": "66a5dd3e84fae069fbc8c600"
+        }
+      },
+      {
+        "input": "{\"word1\": \"intention\", \"word2\": \"execution\"}",
+        "output": "5",
+        "_id": {
+          "$oid": "66a5dd3e84fae069fbc8c601"
+        }
+      }
+    ],
+    "all_test_cases": [
+      {
+        "input": "{\"word1\": \"horse\", \"word2\": \"ros\"}",
+        "output": "3",
+        "_id": {
+          "$oid": "66a5dd3e84fae069fbc8c602"
+        }
+      },
+      {
+        "input": "{\"word1\": \"intention\", \"word2\": \"execution\"}",
+        "output": "5",
+        "_id": {
+          "$oid": "66a5dd3e84fae069fbc8c603"
+        }
+      },
+      {
+        "input": "{\"word1\": \"abc\", \"word2\": \"yabd\"}",
+        "output": "2",
+        "_id": {
+          "$oid": "66a5dd3e84fae069fbc8c604"
+        }
+      },
+      {
+        "input": "{\"word1\": \"b\", \"word2\": \"a\"}",
+        "output": "1",
+        "_id": {
+          "$oid": "66a5dd3e84fae069fbc8c605"
+        }
+      }
+    ]
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a5dd8a84fae069fbc8c608"
+  },
+  "problem_name": "Longest Common Subsequence",
+  "problem_desc": "Given two strings text1 and text2, return the length of their longest common subsequence. If there is no common subsequence, return 0. A subsequence of a string is a new string generated from the original string with some characters (can be none) deleted without changing the relative order of the remaining characters. A common subsequence of two strings is a subsequence that is common to both strings.",
+  "problem_examples": "<b>Example 1:</b><br><br><b>Input:</b> text1 = 'abcde', text2 = 'ace' <br><b>Output:</b> 3 <br><b>Explanation:</b> The longest common subsequence is 'ace' and its length is 3.<br><br><b>Example 2:</b><br><br><b>Input:</b> text1 = 'abc', text2 = 'abc' <br><b>Output:</b> 3 <br><b>Explanation:</b> The longest common subsequence is 'abc' and its length is 3.<br><br><b>Example 3:</b><br><br><b>Input:</b> text1 = 'abc', text2 = 'def' <br><b>Output:</b> 0 <br><b>Explanation:</b> There is no such common subsequence, so the result is 0.",
+  "constraints": "1 <= text1.length, text2.length <= 1000; text1 and text2 consist of only lowercase English characters.",
+  "category": "medium",
+  "tags": [
+    "Dynamic Programming",
+    "String"
+  ],
+  "solution_skeleton": {
+    "javascript": "function longestCommonSubsequence(text1, text2) {\n  // Your code here\n  return 0;\n}",
+    "python": "def longest_common_subsequence(text1, text2):\n    # Your code here\n    return 0",
+    "java": "public int longestCommonSubsequence(String text1, String text2) {\n    // Your code here\n    return 0;\n}",
+    "c": "int longestCommonSubsequence(char* text1, char* text2) {\n    // Your code here\n    return 0;\n}",
+    "cpp": "int longestCommonSubsequence(string text1, string text2) {\n    // Your code here\n    return 0;\n}"
+  },
+  "hints": [
+    "Use dynamic programming to store the length of the longest common subsequence for substrings.",
+    "Consider using a 2D array to store the results of subproblems."
+  ],
+  "testcases": {
+    "sample": [
+      {
+        "input": "{\"text1\": \"abcde\", \"text2\": \"ace\"}",
+        "output": "3",
+        "_id": {
+          "$oid": "66a5dd8a84fae069fbc8c609"
+        }
+      },
+      {
+        "input": "{\"text1\": \"abc\", \"text2\": \"abc\"}",
+        "output": "3",
+        "_id": {
+          "$oid": "66a5dd8a84fae069fbc8c60a"
+        }
+      }
+    ],
+    "all_test_cases": [
+      {
+        "input": "{\"text1\": \"abcde\", \"text2\": \"ace\"}",
+        "output": "3",
+        "_id": {
+          "$oid": "66a5dd8a84fae069fbc8c60b"
+        }
+      },
+      {
+        "input": "{\"text1\": \"abc\", \"text2\": \"abc\"}",
+        "output": "3",
+        "_id": {
+          "$oid": "66a5dd8a84fae069fbc8c60c"
+        }
+      },
+      {
+        "input": "{\"text1\": \"abc\", \"text2\": \"def\"}",
+        "output": "0",
+        "_id": {
+          "$oid": "66a5dd8a84fae069fbc8c60d"
+        }
+      },
+      {
+        "input": "{\"text1\": \"abcd\", \"text2\": \"acd\"}",
+        "output": "3",
+        "_id": {
+          "$oid": "66a5dd8a84fae069fbc8c60e"
+        }
+      }
+    ]
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a5dec784fae069fbc8c611"
+  },
+  "problem_name": "Day of the Year",
+  "problem_desc": "Given a string date representing a Gregorian calendar date formatted as YYYY-MM-DD, return the day number of the year.",
+  "problem_examples": "<b>Example 1:</b><br><br><b>Input:</b> date = \"2019-01-09\"<br><b>Output:</b> 9<br><b>Explanation:</b> Given date is the 9th day of the year in 2019.<br><br><b>Example 2:</b><br><br><b>Input:</b> date = \"2019-02-10\"<br><b>Output:</b> 41<br>",
+  "constraints": "date.length == 10; date[4] == date[7] == '-', and all other date[i]'s are digits; date represents a calendar date between Jan 1st, 1900 and Dec 31st, 2019.",
+  "category": "easy",
+  "tags": [
+    "Date",
+    "String Manipulation"
+  ],
+  "solution_skeleton": {
+    "javascript": "function dayOfYear(date) {\n  // Your code here\n  return 0;\n}",
+    "python": "def day_of_year(date):\n    # Your code here\n    return 0",
+    "java": "public int dayOfYear(String date) {\n    // Your code here\n    return 0;\n}",
+    "c": "int dayOfYear(const char* date) {\n    // Your code here\n    return 0;\n}",
+    "cpp": "int dayOfYear(string date) {\n    // Your code here\n    return 0;\n}"
+  },
+  "hints": [
+    "Parse the date string to extract the year, month, and day.",
+    "Use a list or array to store the number of days in each month.",
+    "Account for leap years when determining the number of days in February."
+  ],
+  "testcases": {
+    "sample": [
+      {
+        "input": "\"2019-01-09\"",
+        "output": "9",
+        "_id": {
+          "$oid": "66a5dec784fae069fbc8c612"
+        }
+      },
+      {
+        "input": "\"2019-02-10\"",
+        "output": "41",
+        "_id": {
+          "$oid": "66a5dec784fae069fbc8c613"
+        }
+      }
+    ],
+    "all_test_cases": [
+      {
+        "input": "\"2019-01-09\"",
+        "output": "9",
+        "_id": {
+          "$oid": "66a5dec784fae069fbc8c614"
+        }
+      },
+      {
+        "input": "\"2019-02-10\"",
+        "output": "41",
+        "_id": {
+          "$oid": "66a5dec784fae069fbc8c615"
+        }
+      },
+      {
+        "input": "\"2000-03-01\"",
+        "output": "61",
+        "_id": {
+          "$oid": "66a5dec784fae069fbc8c616"
+        }
+      },
+      {
+        "input": "\"1900-12-31\"",
+        "output": "365",
+        "_id": {
+          "$oid": "66a5dec784fae069fbc8c617"
+        }
+      }
+    ]
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a5df5184fae069fbc8c61b"
+  },
+  "problem_name": "Minimum Window Substring",
+  "problem_desc": "Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string.",
+  "problem_examples": "<b>Example 1:</b><br><br><b>Input:</b> s = \"ADOBECODEBANC\", t = \"ABC\"<br><b>Output:</b> \"BANC\"<br><b>Explanation:</b> The minimum window substring \"BANC\" includes 'A', 'B', and 'C' from string t.<br><br><b>Example 2:</b><br><br><b>Input:</b> s = \"a\", t = \"a\"<br><b>Output:</b> \"a\"<br><b>Explanation:</b> The entire string s is the minimum window.<br><br><b>Example 3:</b><br><br><b>Input:</b> s = \"a\", t = \"aa\"<br><b>Output:</b> \"\"<br><b>Explanation:</b> Both 'a's from t must be included in the window. Since the largest window of s only has one 'a', return empty string.<br>",
+  "constraints": "m == s.length, n == t.length, 1 <= m, n <= 10^5, s and t consist of uppercase and lowercase English letters.",
+  "category": "hard",
+  "tags": [
+    "Sliding Window",
+    "String"
+  ],
+  "solution_skeleton": {
+    "javascript": "function minWindow(s, t) {\n  // Your code here\n  return \"\";\n}",
+    "python": "def min_window(s, t):\n    # Your code here\n    return \"\"",
+    "java": "public String minWindow(String s, String t) {\n    // Your code here\n    return \"\";\n}",
+    "c": "char* minWindow(const char* s, const char* t) {\n    // Your code here\n    return \"\";\n}",
+    "cpp": "string minWindow(string s, string t) {\n    // Your code here\n    return \"\";\n}"
+  },
+  "hints": [
+    "Use two pointers to create a sliding window.",
+    "Expand the window until it contains all characters of t.",
+    "Try to minimize the window while maintaining all characters of t."
+  ],
+  "testcases": {
+    "sample": [
+      {
+        "input": "{\"s\": \"ADOBECODEBANC\", \"t\": \"ABC\"}",
+        "output": "\"BANC\"",
+        "_id": {
+          "$oid": "66a5df5184fae069fbc8c61c"
+        }
+      },
+      {
+        "input": "{\"s\": \"a\", \"t\": \"a\"}",
+        "output": "\"a\"",
+        "_id": {
+          "$oid": "66a5df5184fae069fbc8c61d"
+        }
+      },
+      {
+        "input": "{\"s\": \"a\", \"t\": \"aa\"}",
+        "output": "\"\"",
+        "_id": {
+          "$oid": "66a5df5184fae069fbc8c61e"
+        }
+      }
+    ],
+    "all_test_cases": [
+      {
+        "input": "{\"s\": \"ADOBECODEBANC\", \"t\": \"ABC\"}",
+        "output": "\"BANC\"",
+        "_id": {
+          "$oid": "66a5df5184fae069fbc8c61f"
+        }
+      },
+      {
+        "input": "{\"s\": \"a\", \"t\": \"a\"}",
+        "output": "\"a\"",
+        "_id": {
+          "$oid": "66a5df5184fae069fbc8c620"
+        }
+      },
+      {
+        "input": "{\"s\": \"a\", \"t\": \"aa\"}",
+        "output": "\"\"",
+        "_id": {
+          "$oid": "66a5df5184fae069fbc8c621"
+        }
+      },
+      {
+        "input": "{\"s\": \"XYZOYZ\", \"t\": \"XYZ\"}",
+        "output": "\"XYZ\"",
+        "_id": {
+          "$oid": "66a5df5184fae069fbc8c622"
+        }
+      },
+      {
+        "input": "{\"s\": \"ABCDEFG\", \"t\": \"EFG\"}",
+        "output": "\"EFG\"",
+        "_id": {
+          "$oid": "66a5df5184fae069fbc8c623"
+        }
+      }
+    ]
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66acad171f7789f852deb247"
+  },
+  "problem_name": "Minimum Swaps to Group All 1's Together II",
+  "problem_desc": "A swap is defined as taking two distinct positions in an array and swapping the values in them. A circular array is defined as an array where we consider the first element and the last element to be adjacent. Given a binary circular array nums, return the minimum number of swaps required to group all 1's present in the array together at any location.",
+  "problem_examples": "<b>Example 1:</b><br><br>\n<b>Input:</b> nums = [0,1,0,1,1,0,0] <br>\n<b>Output:</b> 1 <br>\n<b>Explanation: </b>Here are a few of the ways to group all the 1's together:<br>\n[0,0,1,1,1,0,0] using 1 swap.<br>\n[0,1,1,1,0,0,0] using 1 swap.<br>\n[1,1,0,0,0,0,1] using 2 swaps (using the circular property of the array).<br>\nThere is no way to group all 1's together with 0 swaps.\nThus, the minimum number of swaps required is 1.<br><br>\n\n<b>Example 2:</b><br><br>\n<b>Input:</b> nums = [0,1,1,1,0,0,1,1,0]<br>\n<b>Output:</b> 2<br>\n<b>Explanation:</b> Here are a few of the ways to group all the 1's together:<br>\n[1,1,1,0,0,0,0,1,1] using 2 swaps (using the circular property of the array).<br>\n[1,1,1,1,1,0,0,0,0] using 2 swaps.<br>\nThere is no way to group all 1's together with 0 or 1 swaps.<br>\nThus, the minimum number of swaps required is 2.<br><br>\n\n<b>Example 3:</b><br><br>\n<b>Input:</b> nums = [1,1,0,0,1]<br>\n<b>Output:</b> 0  <br>\n<b>Explanation: </b>All the 1's are already grouped together due to the circular property of the array.<br>\nThus, the minimum number of swaps required is 0.<br>",
+  "constraints": "1 <= nums.length <= 100000\nnums[i] is either 0 or 1.",
+  "category": "medium",
+  "tags": [
+    "Arrays",
+    "Two Pointers",
+    "Sliding Window"
+  ],
+  "solution_skeleton": {
+    "javascript": "function minSwaps(nums) {\n    // Your logic here\n    return 0;\n}",
+    "python": "def min_swaps(nums):\n    # Your logic here\n    return 0",
+    "java": "public int minSwaps(int[] nums) {\n    // Your logic here\n    return 0;\n}",
+    "c": "int minSwaps(int* nums, int numsSize) {\n    // Your logic here\n    return 0;\n}",
+    "cpp": "int minSwaps(vector<int>& nums) {\n    // Your logic here\n    return 0;\n}"
+  },
+  "hints": [
+    "Consider using the sliding window technique to count 1's within a window.",
+    "Make use of the circular property by extending the array."
+  ],
+  "testcases": {
+    "sample": [
+      {
+        "input": "[0, 1, 0, 1, 1, 0, 0]",
+        "output": "1",
+        "_id": {
+          "$oid": "66a4f50d035b5dc2e1cf49f0"
+        }
+      },
+      {
+        "input": "[0, 1, 1, 1, 0, 0, 1, 1, 0]",
+        "output": "2",
+        "_id": {
+          "$oid": "66a4f50d035b5dc2e1cf49f1"
+        }
+      }
+    ],
+    "all_test_cases": [
+      {
+        "input": "[0, 1, 0, 1, 1, 0, 0]",
+        "output": "1",
+        "_id": {
+          "$oid": "66a4f50d035b5dc2e1cf49f2"
+        }
+      },
+      {
+        "input": "[0, 1, 1, 1, 0, 0, 1, 1, 0]",
+        "output": "2",
+        "_id": {
+          "$oid": "66a4f50d035b5dc2e1cf49f3"
+        }
+      },
+      {
+        "input": "[1, 1, 0, 0, 1]",
+        "output": "0",
+        "_id": {
+          "$oid": "66a4f50d035b5dc2e1cf49f4"
+        }
+      }
+    ]
+  },
+  "__v": 0
+}]
